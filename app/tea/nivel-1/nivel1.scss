@@ -1,0 +1,234 @@
+/* CONTAINER */
+
+.container-aula {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
+  padding-bottom: 50px;
+}
+
+.conteudo-aula {
+  width: 700px;
+}
+
+/* TOPO CONTEÚDO */
+.topo-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+/* TAG */
+.tag {
+  background: #e8f3ed;
+  color: var(--primary);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+/* BOTÕES TOPO */
+.acoes-aula {
+  display: flex;
+  gap: 14px;
+}
+
+.acoes-aula button {
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid #dce4de;
+  background: var(--card);
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+/* PROGRESSO */
+.barra-progresso {
+  margin-bottom: 35px;
+}
+
+.texto-progresso {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #74808b;
+}
+
+.linha {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: #e7ece9;
+  overflow: hidden;
+}
+
+.preenchimento {
+  width: 20%;
+  height: 100%;
+  background: var(--primary);
+}
+
+/* BLOCOS */
+.blocos {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.bloco {
+  background: var(--card);
+  border: 1px solid #dce4de;
+  border-radius: 18px;
+  padding: 28px;
+  transition: 0.3s;
+}
+
+.bloco.ativo {
+  border: 2px solid var(--primary);
+}
+
+/* CABEÇALHO BLOCO */
+.cabecalho-bloco {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.cabecalho-bloco h3 {
+  font-size: 1.8rem;
+}
+
+/* CÍRCULO */
+
+.circulo {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #7f8b94;
+}
+
+/* TEXTO BLOCO */
+
+.bloco p {
+  margin-left: 38px;
+  color: #74808b;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.imagem-bloco {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 18px 0;
+}
+
+/* BOTÃO CONCLUIR */
+.btn-concluir {
+  margin-left: 38px;
+  height: 46px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  border-radius: 12px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.footer-aula {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.btn-dashboard {
+  height: 48px;
+  border-radius: 14px;
+  border: 1px solid #dce4de;
+  background: var(--card);
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+/* MODO CONCENTRAÇÃO */
+.focus-mode .desfocado {
+  opacity: 0.12;
+  filter: blur(2px);
+  transform: scale(0.98);
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.focus-mode .ativo {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.15);
+}
+
+/* PROGRESSO ANIMADO */
+.preenchimento {
+  transition: 0.4s;
+}
+
+/* CHECK DOS BLOCOS */
+
+.circulo {
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+  border: 2px solid #7f8b94;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.icone-check {
+  font-size: 1.5rem;
+
+  color: #53b788;
+}
+
+/* BLOCO CONCLUÍDO */
+
+.bloco.concluido {
+  border-color: #b7e4c7;
+}
+
+/* MENSAGEM FINAL */
+
+.mensagem-concluida {
+  margin-top: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #2fbf71;
+
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.mensagem-concluida svg {
+  font-size: 1.4rem;
+}  

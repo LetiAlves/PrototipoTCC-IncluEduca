@@ -1,0 +1,291 @@
+/* CONTAINER */
+
+.container-aula {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+.conteudo-aula {
+    width: 700px;
+}
+
+/* TOPO CONTEÚDO */
+.topo-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+/* TAG */
+.tag {
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.tag.tdah {
+    background: #fff3e3;
+    color: #df942b;
+}
+
+/* AÇÕES */
+
+.acoes-aula {
+    display: flex;
+    gap: 14px;
+}
+
+.acoes-aula button {
+    height: 46px;
+    border-radius: 14px;
+    border: 1px solid #dce4de;
+    background: var(--card);
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--foreground);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.acoes-aula button:hover {
+    transform: translateY(-1px);
+}
+
+/* PROGRESSO */
+
+.barra-progresso {
+    margin-bottom: 35px;
+}
+
+.texto-progresso {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    color: #74808b;
+}
+
+.linha {
+    width: 100%;
+    height: 10px;
+    border-radius: 999px;
+    background: #e9ecef;
+    overflow: hidden;
+}
+
+.preenchimento {
+    height: 100%;
+    border-radius: 999px;
+    transition: 0.4s;
+}
+
+.preenchimento.tdah {
+    background: #df942b;
+}
+
+/* BLOCOS */
+
+.blocos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* BLOCO */
+
+.bloco {
+    background: var(--card);
+    border: 2px solid #dfe8e3;
+    border-radius: 18px;
+    padding: 24px;
+    transition: 0.3s;
+}
+
+/* BLOCO ATIVO */
+
+.bloco.ativo {
+    border: 2px solid #df942b;
+    box-shadow: 0 4px 18px rgba(223, 148, 43, 0.08);
+}
+
+/* DESFOCADO */
+
+.bloco.desfocado {
+    opacity: 0.5;
+}
+
+/* CABEÇALHO */
+
+.cabecalho-bloco {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.cabecalho-bloco h3 {
+    font-size: 1.5rem;
+}
+
+/* CÍRCULO */
+
+.circulo {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #7d8a95;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CHECK */
+
+.icone-check {
+    color: #35b56a;
+    font-size: 1.1rem;
+}
+
+/* TEXTO */
+
+.bloco p {
+    margin-top: 18px;
+    margin-left: 38px;
+    color: #6f7f89;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* BOTÃO */
+
+.btn-concluir {
+    margin-top: 22px;
+    margin-left: 38px;
+    height: 48px;
+    border: none;
+    border-radius: 14px;
+    padding: 0 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tdah-btn {
+    background: #df942b;
+}
+
+.tdah-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+/* PAINEL */
+
+.painel-desempenho {
+    margin-top: 36px;
+    border: 2px solid #fde6c7;
+    border-radius: 18px;
+    padding: 24px;
+}
+
+/* TÍTULO */
+.titulo-desempenho {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+    color: #df942b;
+}
+
+.titulo-desempenho h3 {
+    color: var(--foreground);
+}
+
+/* CARDS */
+.cards-desempenho {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.card-status {
+    background: #f8fbfa;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-status h4 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #df942b;
+}
+
+.card-status span {
+    color: #74808b;
+}
+
+.card-status.destaque h4 {
+    color: #35b56a;
+}
+
+/* FOOTER */
+.footer-aula {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-dashboard {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.4rem;
+    border-radius: 14px;
+    border: 1px solid #d8dedb;
+    background: white;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 25px;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .conteudo-aula {
+        width: 92%;
+    }
+
+    .topo-conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .acoes-aula {
+        width: 100%;
+    }
+
+    .acoes-aula button {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .cards-desempenho {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho-bloco h3 {
+        font-size: 1.2rem;
+    }
+}

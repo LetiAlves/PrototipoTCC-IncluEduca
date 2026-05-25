@@ -1,0 +1,183 @@
+.container-aula {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
+  padding-bottom: 50px;
+}
+
+.conteudo-aula {
+  width: 750px;
+}
+
+/* TOPO */
+.topo-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.tag {
+  background: #e8f3ed;
+  color: var(--primary);
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+
+/* BOTÕES */
+.acoes-aula {
+  display: flex;
+  gap: 14px;
+}
+
+.acoes-aula button {
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid #dce4de;
+  background: var(--card);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: var(--foreground);
+}
+
+/* PROGRESSO */
+
+.barra-progresso {
+  margin-bottom: 28px;
+}
+
+.texto-progresso {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.linha {
+  width: 100%;
+  height: 10px;
+  background: #e7ece9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.preenchimento {
+  width: 20%;
+  height: 100%;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+/* BLOCOS */
+
+.blocos {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.bloco {
+  background: var(--card);
+  border: 1px solid #dce4de;
+  border-radius: 20px;
+  padding: 26px;
+  transition: 0.3s;
+}
+
+.bloco.ativo {
+  border: 2px solid var(--primary);
+}
+
+.imagem-bloco {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 18px 0;
+}
+
+/* CABEÇALHO */
+
+.cabecalho-bloco {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cabecalho-bloco h3 {
+  font-size: 1.2rem;
+}
+
+/* CÍRCULO */
+.circulo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #7f8b94;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icone-check {
+  font-size: 1.5rem;
+  color: #53b788;
+}
+
+/* TEXTO */
+.bloco p {
+  margin-top: 18px;
+  margin-left: 34px;
+  color: #74808b;
+  line-height: 1.8;
+  font-size: 1.3rem;
+}
+
+/* BOTÃO */
+.btn-concluir {
+  margin-top: 24px;
+  margin-left: 34px;
+  height: 52px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  padding: 0 22px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* MODO FOCO */
+.focus-mode .desfocado {
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.focus-mode .ativo {
+  position: relative;
+  z-index: 2;
+}
+
+/* FOOTER */
+.footer-aula {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.btn-dashboard {
+  height: 50px;
+  border-radius: 14px;
+  border: 1px solid #dce4de;
+  background: var(--card);
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}

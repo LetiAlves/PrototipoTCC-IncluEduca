@@ -1,0 +1,22 @@
+create database incluaeducadb;
+
+create table alunos(
+    id int primary key AUTO_INCREMENT,
+	ra int,
+    nome varchar(150) UNIQUE,
+    email varchar(150),
+    senha varchar(150),
+    serie_escolar varchar(10),
+    diagnostico varchar(10),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+create table professores(
+	id int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(100),
+    email varchar(150) UNIQUE,
+    senha varchar(150),
+    materia varchar(20),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

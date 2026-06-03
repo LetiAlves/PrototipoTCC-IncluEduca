@@ -46,6 +46,9 @@ app.post("/login", async (req, res) => {
       where: { email, password }
     });
 
+
+    console.log("Resultado: ", response);
+
     if (!response) {
       return res.json({ success: false });
     }
@@ -68,6 +71,6 @@ app.get("/", (req, res) => {
   res.send("API funcionando");
 });
 
-app.listen(3000, () => {
-  console.log("Servidor rodando na porta 3000");
+app.listen(3001, () => {
+  console.log("Servidor rodando na porta 3001");
 });

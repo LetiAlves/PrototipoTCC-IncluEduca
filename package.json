@@ -9,11 +9,15 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.4",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-icons": "^5.6.0",
-    "sass": "^1.99.0"
+    "sass": "^1.99.0",
+    "sequelize": "^6.37.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

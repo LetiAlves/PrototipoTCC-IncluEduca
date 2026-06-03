@@ -7,6 +7,8 @@ import { IoBookOutline, IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 export default function Home() {
   const router = useRouter();
   const [darkMode, setDarkMode] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     if (darkMode) {
@@ -16,9 +18,35 @@ export default function Home() {
     }
   }, [darkMode]);
 
-  function entrar(e: React.FormEvent) {
+  async function entrar(e: React.FormEvent) {
     e.preventDefault();
-    router.push("/selectPerfil");
+
+    try {
+    const response = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+
+    const json = await response.json();
+
+    console.log("Resposta do backend:", json);
+
+    if (json.success) {
+      router.push("/selectPerfil");
+    } else {
+      alert("Email ou senha incorretos");
+    }
+  } catch (error) {
+    console.error("Erro ao conectar com a API:", error);
+    alert("Erro ao conectar com o servidor");
+  }
+    // router.push("/selectPerfil");
   }
 
   return (
@@ -47,10 +75,10 @@ export default function Home() {
 
           <form onSubmit={entrar} className="formulario">
             <label>E-mail</label>
-            <input type="email" placeholder="educador@escola.com" />
+            <input type="email" value={email} onChange={ (e) => setEmail(e.target.value)} placeholder="educador@escola.com" />
 
             <label>Senha</label>
-            <input type="password" placeholder="Senha" />
+            <input type="password" value={password} onChange={ (e) => setPassword(e.target.value)} placeholder="Senha" />
 
             <button type="submit">Entrar</button>
           </form>

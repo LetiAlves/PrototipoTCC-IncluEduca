@@ -3,6 +3,9 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const { Sequelize, DataTypes } = require("sequelize");
 
+// IMPORTAR ESSAS BIBLIOTECAS ANTES
+// npm install express cors body-parser sequelize mysql2
+
 const app = express();
 
 app.use(cors());

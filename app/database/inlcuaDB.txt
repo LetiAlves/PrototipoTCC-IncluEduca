@@ -1,11 +1,13 @@
 create database incluaeducadb;
 
+use incluaeducadb;
+
 create table alunos(
     id int primary key AUTO_INCREMENT,
 	ra int,
     nome varchar(150) UNIQUE,
     email varchar(150),
-    senha varchar(150),
+    password varchar(150),
     serie_escolar varchar(10),
     diagnostico varchar(10),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -20,3 +22,8 @@ create table professores(
     materia varchar(20),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
+INSERT INTO alunos(ra, nome, email, password, serie_escolar, diagnostico) VALUES('234182023','Davi','davi.123@gmail.com','12345','3g','tdah');
+
+INSERT INTO alunos(ra, nome, email, password, serie_escolar, diagnostico) VALUES('234182020','Jessica','jj.teste@gmail.com','12345','3a','TEA');

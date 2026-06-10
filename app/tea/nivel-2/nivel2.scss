@@ -44,6 +44,12 @@
   color: var(--foreground);
 }
 
+button {
+  &.active {
+    background: var(--primary);
+  }
+}
+
 /* PROGRESSO */
 
 .barra-progresso {

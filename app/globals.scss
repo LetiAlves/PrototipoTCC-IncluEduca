@@ -6,7 +6,7 @@
   --card: #ffffff;
   --input: #eef2ef;
   --primary: #4d9679;
-  --second:#dd9a3c;
+  --second: #dd9a3c;
 }
 
 body.dark {
@@ -171,8 +171,8 @@ body {
   cursor: pointer;
   color: var(--foreground);
 
-    svg {
-    color: #1c1f1d;
+  svg {
+    color: inherit;
   }
 }
 
@@ -307,10 +307,13 @@ a {
   margin: auto;
   padding: 8px 18px;
   border-radius: 999px;
-  background: #e7f3ed;
-  color: var(--primary);
   font-weight: bold;
   margin-bottom: 22px;
+}
+
+.tea-tag {
+  background: #e7f3ed;
+  color: var(--primary);
 }
 
 .conteudo h2 {
@@ -369,8 +372,8 @@ a {
 /* TDAH */
 
 .tdah-tag {
-  background: #fff2e2;
-  color: var(--second);
+  background: #fff2e2 !important;
+  color: var(--second) !important;
 }
 
 .tdah-card:hover {

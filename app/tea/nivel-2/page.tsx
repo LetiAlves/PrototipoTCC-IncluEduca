@@ -123,7 +123,7 @@ export default function Nivel2TEA() {
             <span className="tag">TEA · Nível 2</span>
             <span className="tag">Geografia</span>
             <div className="acoes-aula">
-              <button onClick={() => setFocusMode(!focusMode)}>
+              <button  onClick={() => setFocusMode(!focusMode)}>
                 <RiFocus3Line />
                 {focusMode ? "Sair do foco" : "Modo concentração"}
               </button>

@@ -57,7 +57,7 @@ export default function NivelTEA() {
       {/* CONTEÚDO */}
       <main className="container-niveis">
         <div className="conteudo">
-          <span className="tag">TEA</span>
+          <span className="tag tea-tag">TEA</span>
 
           <h2>Nível de suporte</h2>
 

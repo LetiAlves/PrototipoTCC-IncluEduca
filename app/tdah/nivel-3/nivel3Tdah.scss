@@ -3,7 +3,8 @@
     display: flex;
     justify-content: center;
     padding: 8rem 1.5rem 3rem;
-    background: #f8f6f4;
+    background: var(--background);
+    color: var(--foreground);
 }
 
 .conteudo-aula {
@@ -21,7 +22,7 @@
 
 .tag {
     background: #fcefdc;
-    color: #e09a2f;
+    color: var(--second);
     padding: 0.45rem 1rem;
     border-radius: 999px;
     font-size: 0.9rem;
@@ -39,7 +40,8 @@
         padding: 0.9rem 1rem;
         border-radius: 14px;
         border: 1px solid #d8dedb;
-        background: white;
+        background: var(--card);
+        color: var(--foreground);
         cursor: pointer;
         transition: 0.2s;
     }
@@ -63,14 +65,14 @@
 
     span {
         font-size: 0.95rem;
-        color: #5f6b76;
+        color: #74808b;
     }
 }
 
 .linha {
     width: 100%;
     height: 12px;
-    background: #e8ecef;
+    background: var(--input);
     border-radius: 999px;
     overflow: hidden;
 }
@@ -78,22 +80,22 @@
 .preenchimento {
     height: 100%;
     border-radius: 999px;
-    background: #e09a2f;
+    background: var(--second);
     transition: 0.3s;
 }
 
 /* PASSO */
-.passo-atual {
+.passo {
     text-align: center;
-    color: #e09a2f;
+    color: #4f9b7d;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-top: 0.5rem;
 }
 
 /* BLOCO */
 .bloco {
-    background: white;
-    border: 2px solid #e09a2f;
+    background: var(--card);
+    border: 2px solid var(--second);
     border-radius: 22px;
     padding: 2rem;
     margin-bottom: 1.5rem;
@@ -108,12 +110,7 @@
 
     h3 {
         font-size: 1.8rem;
-        color: #1d2b36;
-    }
-
-    span {
-        color: #6f7d88;
-        font-weight: 700;
+        color: var(--foreground);
     }
 }
 
@@ -123,12 +120,20 @@
     border-radius: 50%;
     border: 2px solid #6f7d88;
     margin-top: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icone-check {
+    color: #59c27f;
+    font-size: 1.5rem;
 }
 
 .bloco p {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: #667481;
+    color: #74808b;
     margin-left: 2.8rem;
     margin-bottom: 2rem;
 }
@@ -168,7 +173,8 @@
         padding: 1rem 1.5rem;
         border-radius: 14px;
         border: 1px solid #d7dfdb;
-        background: white;
+        background: var(--card);
+        color: var(--foreground);
         cursor: pointer;
         transition: 0.2s;
         font-size: 1rem;
@@ -184,7 +190,7 @@
 .painel-desempenho {
     border: 1px solid #f0cf9f;
     border-radius: 20px;
-    background: #fffaf4;
+    background: var(--card);
     padding: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -196,12 +202,12 @@
     margin-bottom: 1.5rem;
 
     h3 {
-        color: #1d2b36;
+        color: var(--foreground);
         font-size: 1.3rem;
     }
 
     svg {
-        color: #e09a2f;
+        color: var(--second);
         font-size: 1.3rem;
     }
 }
@@ -213,29 +219,25 @@
 }
 
 .card-status {
-    background: white;
+    background: var(--input);
     border-radius: 16px;
     padding: 1.2rem;
     text-align: center;
 
     h4 {
         font-size: 2rem;
-        color: #4da0d8;
+        color: var(--second);
         margin-bottom: 0.3rem;
     }
 
     span {
-        color: #6b7885;
+        color: #74808b;
         font-size: 0.95rem;
     }
 }
 
-.card-status.concluidos h4 {
-    color: #e09a2f;
-}
-
-.card-status.progresso h4 {
-    color: #32b05f;
+.destaque h4 {
+    color: #59c27f;
 }
 
 /* FOOTER */
@@ -251,7 +253,8 @@
     padding: 1rem 1.4rem;
     border-radius: 14px;
     border: 1px solid #d8dedb;
-    background: white;
+    background: var(--card);
+    color: var(--foreground);
     cursor: pointer;
     transition: 0.2s;
 

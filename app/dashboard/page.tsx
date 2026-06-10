@@ -25,11 +25,11 @@ export default function DashboardEducador() {
   const [fontSize, setFontSize] = useState(16);
 
   useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-    }
+    // if (darkMode) {
+    //   document.body.classList.add("dark");
+    // } else {
+    //   document.body.classList.remove("dark");
+    // }
 
     document.documentElement.style.fontSize = `${fontSize}px`;
   }, [darkMode, fontSize]);

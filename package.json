@@ -9,9 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "body-parser": "^2.2.2",
     "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2",
+    "helmet": "^8.2.0",
+    "jsonwebtoken": "^9.0.3",
     "lucide-react": "^1.17.0",
     "mysql2": "^3.22.5",
     "next": "16.2.4",
@@ -19,7 +24,8 @@
     "react-dom": "19.2.4",
     "react-icons": "^5.6.0",
     "sass": "^1.99.0",
-    "sequelize": "^6.37.8"
+    "sequelize": "^6.37.8",
+    "validator": "^13.15.35"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

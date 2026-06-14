@@ -43,15 +43,32 @@ export default function Home() {
       console.log("Resposta do backend:", json);
 
       if (json.success) {
+
+        localStorage.setItem(
+          "token",
+          json.token
+        );
+
+        localStorage.setItem(
+          "usuario",
+          JSON.stringify(json.user)
+        );
+
+        setEmail("");
+        setPassword("");
+
         setError("");
         setSuccess("Login realizado com sucesso!");
 
         setTimeout(() => {
           router.push("/selectPerfil");
         }, 1500);
-      } else {
+      } else{
+
         setSuccess("");
-        setError("E-mail ou senha incorretos.");
+        setError(
+          json.message || "E-mail ou senha incorretos."
+        );
       }
     } catch (error) {
       console.error("Erro ao conectar com a API:", error);

@@ -61,7 +61,27 @@ export default function Home() {
         setSuccess("Login realizado com sucesso!");
 
         setTimeout(() => {
-          router.push("/selectPerfil");
+          // router.push("/selectPerfil");
+
+          const rotas = {
+            TDAH: {
+              1: "/tdah/nivel-1",
+              2: "/tdah/nivel-2",
+              3: "/tdah/nivel-3",
+            },
+            TEA: {
+              1: "/tea/nivel-1",
+              2: "/tea/nivel-2",
+              3: "/tea/nivel-3",
+            }
+          };
+
+          const diagnostico = json.user.diagnostico;
+          const nivel = json.user.niveis;
+          const rotaDestino = rotas[diagnostico]?.[nivel];
+
+          router.push(rotaDestino);
+          
         }, 1500);
       } else{
 
@@ -137,6 +157,10 @@ export default function Home() {
 
           <span className="rodape">
             Ambiente seguro e acessível para educadores
+            <p onClick={() => router.push("/cadastro")} style={{ color: "#2563eb",
+              cursor: "pointer",
+              fontWeight: "bold",
+              textDecoration: "underline" }}>Criar conta</p>
           </span>
         </div>
       </main>

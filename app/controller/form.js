@@ -10,6 +10,7 @@ const jwt = require("jsonwebtoken");
 const validator = require("validator");
 const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
+const { SiNativescript } = require("react-icons/si");
 
 // IMPORTAR ESSAS BIBLIOTECAS ANTES
 // npm install express cors body-parser sequelize mysql2
@@ -53,27 +54,49 @@ sequelize.authenticate()
   .catch(err => console.error("Erro conexão com banco:", err));
 
 const Alunos = sequelize.define("alunos", {
-    id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
+  id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+  },
+  
+  ra: DataTypes.STRING,
+  
+  nome: DataTypes.STRING,
+
   email: DataTypes.STRING,
-  password: DataTypes.STRING
+
+  password: DataTypes.STRING,
+
+  serie_escolar: DataTypes.STRING,
+
+  diagnostico: DataTypes.STRING,
+
+  niveis: DataTypes.STRING
+
 }, {
   tableName: "alunos", 
   timestamps: false
 });
+
+function gerarRA(){
+
+  const numeroAleatorio = Math.floor(10000 + Math.random() * 90000);
+
+  const anoAtual = new Date().getFullYear();
+
+  return `${numeroAleatorio}${anoAtual}`;
+
+}
 
 // Rota de Cadastro
 app.post("/register", async (req, res) => {
 
   try{
 
-    let {email, password} = sanitizeUser(
-      req.body.email,
-      req.body.password
-    );
+    console.log(req.body);
+
+    const { nome, email, password, serie_escolar, diagnostico, nivel } = req.body;
 
     if(!validator.isEmail(email)){
 
@@ -107,9 +130,18 @@ app.post("/register", async (req, res) => {
       10
     );
 
+    const ra = gerarRA();
+
+    console.log(nome, email, senhaHash, serie_escolar, diagnostico, nivel);
+
     const novoUsuario = await Alunos.create({
+      ra,
+      nome,
       email,
-      password: senhaHash
+      password: senhaHash,
+      serie_escolar,
+      diagnostico,
+      niveis: nivel
     });
 
     return res.status(201).json({
@@ -175,7 +207,9 @@ app.post("/login", loginLimiter, async (req, res) => {
     token,
     user: {
       id: usuario.id,
-      email: usuario.email
+      email: usuario.email,
+      diagnostico: usuario.diagnostico,
+      niveis: usuario.niveis
     }
   });
 

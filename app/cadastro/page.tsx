@@ -17,6 +17,9 @@ export default function Cadastro() {
     const [diagnostico, setDiagnostico] = useState("");
     const [nivel, setNivel] = useState("");
 
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+
     useEffect(() => {
         if (darkMode) {
             document.body.classList.add("dark");
@@ -25,32 +28,75 @@ export default function Cadastro() {
         }
     }, [darkMode]);
 
+
     async function cadastrar(e: React.FormEvent) {
-        e.preventDefault();
+    e.preventDefault();
 
-        const dados = {
-            nome,
-            email,
-            password,
-            serie_escolar: serieEscolar,
-            diagnostico,
-            nivel,
-        };
+        try {
 
-        console.log(dados);
+            const response = await fetch(
+                "http://localhost:3001/register",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        nome,
+                        email,
+                        password,
+                        serie_escolar: serieEscolar,
+                        diagnostico,
+                        nivel
+                    }),
+                }
+            );
 
-        // Aqui você faz o POST para sua API
-        /*
-        await fetch("http://localhost:3001/cadastro", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(dados),
-        });
-        */
+            const json = await response.json();
 
-        router.push("/");
+            console.log(
+                "Resposta do backend:",
+                json
+            );
+
+            if (json.success) {
+
+                setNome("");
+                setEmail("");
+                setPassword("");
+                setSerieEscolar("");
+                setDiagnostico("");
+                setNivel("");
+
+                setError("");
+                setSuccess(
+                    "Cadastro realizado com sucesso!"
+                );
+
+                setTimeout(() => {
+                    router.push("/");
+                }, 1500);
+
+            } else {
+
+                setSuccess("");
+
+                setError(
+                    json.message ||
+                    "Erro ao cadastrar."
+                );
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            setSuccess("");
+
+            setError(
+                "Erro ao conectar com servidor."
+            );
+        }
     }
 
     return (
@@ -76,6 +122,18 @@ export default function Cadastro() {
                     </div>
 
                     <form onSubmit={cadastrar} className="formulario">
+
+                        {error && (
+                            <div className="bg-red-100 border border-red-500 text-red-700 p-3 rounded">
+                                {error}
+                            </div>
+                        )}
+
+                        {success && (
+                            <div className="bg-green-100 border border-green-500 text-green-700 p-3 rounded">
+                                {success}
+                            </div>
+                        )}
 
                         <label>Nome</label>
                         <input
@@ -142,6 +200,10 @@ export default function Cadastro() {
 
                     <span className="rodape">
                         Ambiente seguro e acessível para educadores
+                        <p onClick={() => router.push("../")} style={{ color: "#2563eb",
+                            cursor: "pointer",
+                            fontWeight: "bold",
+                            textDecoration: "underline" }}>Fazer Login</p>
                     </span>
                 </div>
             </main>

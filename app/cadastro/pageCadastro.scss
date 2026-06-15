@@ -1,0 +1,162 @@
+//----------- CADASTRO ---------------
+
+/* TOPO FIXO */
+.topo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 30px;
+    background: var(--background);
+    z-index: 999;
+}
+
+.btn-tema {
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--foreground);
+}
+
+.container-login {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 100px 20px 40px;
+}
+
+.bloco-login {
+    width: 500px;
+    text-align: center;
+}
+
+.icone {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    border-radius: 18px;
+    background: #e9f0eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    color: var(--primary);
+}
+
+.titulo h1 {
+    font-size: 42px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--foreground);
+}
+
+.titulo p {
+    color: #6b7a75;
+    margin-bottom: 40px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.formulario label {
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+/* INPUTS */
+.formulario input,
+.formulario select {
+    width: 100%;
+    height: 52px;
+    border-radius: 12px;
+    border: 1px solid #d9dfdb;
+    padding: 0 15px;
+    background: var(--card);
+    color: var(--foreground);
+    font-size: 16px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.formulario input:focus,
+.formulario select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(86, 160, 128, 0.15);
+}
+
+/* PLACEHOLDER */
+.formulario input::placeholder {
+    color: #98a4a0;
+}
+
+/* SELECT */
+.formulario select {
+    cursor: pointer;
+}
+
+/* BOTÃO */
+.formulario button {
+    margin-top: 15px;
+    height: 52px;
+    border: none;
+    border-radius: 12px;
+    background: var(--primary);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.formulario button:hover {
+    opacity: 0.9;
+}
+
+.rodape {
+    display: block;
+    margin-top: 35px;
+    color: #7b8a84;
+}
+
+/* ALERTAS */
+.bg-red-100 {
+    background: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #b91c1c;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.bg-green-100 {
+    background: #dcfce7;
+    border: 1px solid #22c55e;
+    color: #15803d;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    .bloco-login {
+        width: 100%;
+    }
+
+    .titulo h1 {
+        font-size: 34px;
+    }
+
+    .formulario input,
+    .formulario select,
+    .formulario button {
+        height: 50px;
+    }
+}
